@@ -1,5 +1,6 @@
 <head>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
 </head>
 
 # **Eureka Team.10 (Class 2)**
