@@ -1,0 +1,66 @@
+/* 기본 설정 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#main_content_wrap {
+    padding: 20px;
+}
+
+/* 카드 스타일 */
+#main_content ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+#main_content li {
+    width: 100%; /* 기본적으로 1열로 설정 */
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+    #main_content li {
+        width: 48%; /* 2열로 변경 */
+    }
+}
+
+@media (min-width: 1024px) {
+    #main_content li {
+        width: 30%; /* 3열로 변경 */
+    }
+}
+
+/* 카드 스타일 */
+#main_content li a {
+    display: block;
+    background: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.3s ease;
+}
+
+#main_content li a:hover {
+    transform: translateY(-5px); /* 카드가 살짝 떠오르는 효과 */
+}
+
+/* 카드 내용 스타일 */
+#main_content h2, #main_content h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: #333;
+}
+
+#main_content p {
+    margin-top: 10px;
+    color: #666;
+}

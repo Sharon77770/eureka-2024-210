@@ -1,3 +1,7 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
 # **Eureka Team.10 (Class 2)**
 
 - [팀 소개](#팀-소개)  
