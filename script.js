@@ -1,17 +1,26 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const sections = document.querySelectorAll('section');
-    
-    function checkVisibility() {
-        sections.forEach(section => {
-            const rect = section.getBoundingClientRect();
-            if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
-                section.classList.add('visible');
-            } else {
-                section.classList.remove('visible');
-            }
-        });
-    }
-    
-    window.addEventListener('scroll', checkVisibility);
-    checkVisibility();  // 페이지 로드 시 바로 체크
-});
+const cards = document.querySelectorAll('.card');
+const introCards = document.querySelectorAll('.intro-card');
+
+console.log(introCards.length());
+const handleScroll = () => {
+  introCards.forEach(card => {
+    const rect = card.getBoundingClientRect();
+    const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+    if (isVisible) {
+      card.classList.add('visible');
+    } 
+  });
+
+  cards.forEach(card => {
+    const rect = card.getBoundingClientRect();
+    const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+    if (isVisible) {
+      card.classList.add('visible');
+    } 
+  });
+};
+
+window.addEventListener('scroll', handleScroll);
+
+// 페이지 로드 시 초기 호출
+handleScroll();

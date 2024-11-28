@@ -1,3 +1,7 @@
+<header>
+  <meta http-equiv="refresh" content="0;url=https://sharon77770.github.io/eureka-2024-210/test.html">
+</header>
+
 # **Eureka Team.10 (Class 2)**
 
 - [팀 소개](#팀-소개)  
