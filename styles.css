@@ -1,10 +1,11 @@
-/* 전체 레이아웃 및 공통 스타일 */
+/* 기본 설정 */
 body, html {
   margin: 0;
   padding: 0;
   font-family: 'Noto Sans KR', sans-serif;
   background-color: #f5f5f5;
   color: #333;
+  line-height: 1.6;
 }
 
 .wrapper {
@@ -19,12 +20,12 @@ header {
   background: url('coding_img.jpg') no-repeat center center/cover;
   height: 100vh;
   color: white;
-  position: relative;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 header::before {
@@ -36,42 +37,6 @@ header::before {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 1;
-}
-
-header nav {
-  position: absolute;
-  top: 20px;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 50px;
-  z-index: 2;
-}
-
-header nav .logo {
-  font-size: 1.8rem;
-  font-weight: bold;
-}
-
-header nav ul {
-  display: flex;
-  gap: 30px;
-}
-
-header nav ul li {
-  list-style: none;
-}
-
-header nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
-header nav ul li a:hover {
-  text-decoration: underline;
 }
 
 .header-content {
@@ -98,7 +63,6 @@ header nav ul li a:hover {
   font-size: 1.2rem;
   cursor: pointer;
   text-decoration: none;
-  display: inline-block;
   margin-top: 20px;
 }
 
@@ -113,11 +77,6 @@ header nav ul li a:hover {
   text-align: center;
 }
 
-#about .content {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
 #about h2 {
   font-size: 2.5rem;
   margin-bottom: 20px;
@@ -125,145 +84,105 @@ header nav ul li a:hover {
 
 #about p {
   font-size: 1.1rem;
-  line-height: 1.8;
   color: #555;
+  margin-bottom: 20px;
 }
 
-/* 강좌 섹션 */
-#courses {
-  background-color: #f0f0f0;
-  padding: 50px 20px;
-}
-
-#courses h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-}
-
-.card-grid {
-  display: flex;
-  justify-content: center;
-  gap: 50px;
-  flex-wrap: wrap;
-  padding: 100px;
-}
-
-.card {
-  opacity: 0;
+/* 프로필 카드 스타일 */
+.profile-card, .intro-card {
   background-color: #ffffff;
-  border-radius: 15px;
-  padding: 20px;
-  width: 300px;
-  height: 170px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  transform: translateY(100px);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 50px;
+  margin: 5%;
+  text-align: left;
+  opacity: 0;
+  transform: translateY(30px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.card.visible {
+.cards h2 {
+  font-size: 2.5rem;
+  margin-bottom: 100px;
+  margin-top: 80px;
+  text-align: center;
+}
+
+.profile-card.visible, .intro-card.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-.card h3 {
-  font-size: 1.8rem;
+.profile-card blockquote {
+  font-style: italic;
+  color: #555;
+  padding: 8px 16px;
+  border-left: 4px solid #007BFF;
+  background: #f2f2f2;
+  margin: 0;
+}
+
+.profile-card h3, .intro-card h3 {
+  font-size: 2rem;
+  color: #007BFF;
+  margin-bottom: 16px;
+}
+
+.profile-card h4, .intro-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+  color: #333;
+  border-bottom: 2px solid #007BFF;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.profile-card table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 16px;
+}
+
+.profile-card table th,
+.profile-card table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.profile-card ul {
+  padding-left: 20px;
+}
+
+.profile-card ul li {
   margin-bottom: 10px;
 }
 
-.card p {
-  font-size: 1rem;
-  margin-bottom: 20px;
-  color: #666;
-}
-
-.more-button {
-  padding: 8px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 30px;
-  text-decoration: none;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-.more-button:hover {
-  background-color: #0056b3;
-}
-
-.intro-card {
-  background-color: #ffffff;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 50px;
-  margin: 100px;
-  text-align: left;
-  opacity: 0;
-  transition: opacity 0.6s ease, transform 0.6s ease;
-  transform: translateY(50px);
-}
-
-.intro-card.visible {
-  transform: translateY(0px);
-  opacity: 1;
-}
-
-.intro-card h3 {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 15px;
-  color: #2c3e50;
-}
-
-.intro-card p {
+.intro-card p, .intro-card a {
   font-size: 16px;
   color: #555;
   line-height: 1.6;
-  margin-bottom: 15px;
 }
 
 .intro-card a {
   color: #3498db;
   text-decoration: none;
-  font-weight: bold;
 }
 
 .intro-card a:hover {
   text-decoration: underline;
 }
 
-#contact {
-  background-color: #ffffff;
-  padding: 50px 20px;
-  text-align: center;
+/* 카드 및 섹션 애니메이션 */
+.card, .intro-card, .profile-card {
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform: translateY(30px);
 }
 
-#contact .content {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-#contact h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-
-#contact p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #555;
-}
-
-#contact a {
-  color: #007bff;
-  text-decoration: none;
-}
-
-#contact a:hover {
-  text-decoration: underline;
+.card.visible, .intro-card.visible, .profile-card.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* 푸터 스타일 */
@@ -287,4 +206,23 @@ footer a:hover {
   color: #218838;
 }
 
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+  .header-content h1 {
+    font-size: 2.5rem;
+  }
 
+  .header-content p {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    font-size: 1rem;
+    padding: 8px 25px;
+  }
+
+  .profile-card, .intro-card {
+    padding: 30px;
+    margin: 10%;
+  }
+}
