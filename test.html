@@ -625,36 +625,22 @@
     </footer>
   </div>
   <script>
-    const cards = document.querySelectorAll('.card');
     const introCards = document.querySelectorAll('.intro-card');
     const profileCards = document.querySelectorAll('.profile-card');
-    const OFFSET = 100;
+    const OFFSET = 200;
 
     const handleScroll = () => {
-      cards.forEach((card, idx) => {
-        setTimeout(() => {
-          const rect = card.getBoundingClientRect();
-          const isVisible = rect.top < window.innerHeight - OFFSET && rect.bottom > 0;
-          if (isVisible) {
-            card.classList.add('visible');
-          }
-          else {
-            card.classList.remove('visible');
-          }
-        }, idx * 200);
-      });
-
       introCards.forEach((card, idx) => {
         setTimeout(() => {
           const rect = card.getBoundingClientRect();
-          const isVisible = rect.top < window.innerHeight - OFFSET && rect.bottom > 0;
+          const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
           if (isVisible) {
             card.classList.add('visible');
           }
           else {
             card.classList.remove('visible');
           }
-        }, idx * 200);
+        }, idx * 150);
       });
 
       profileCards.forEach( (card) => {
