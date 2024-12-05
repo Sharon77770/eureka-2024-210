@@ -5,6 +5,21 @@ const techContent = document.querySelectorAll('.tech-stack-container');
 const techBars = document.querySelectorAll('.tech-bar');
 const projectContentTitle = document.querySelector('.cards-title');
 const projectCardList = document.querySelectorAll('.card');
+const headerCard = document.querySelectorAll('.header-content');
+
+
+
+function headerListAnime() {
+    headerCard.forEach( card => {
+        const rect = card.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight - OFFSET && rect.bottom > 0;
+    
+        if(isVisible) {
+            card.classList.add('visible');
+        }
+    });
+}
+
 
 function titleAndListAnime() {
     titleAndListContents.forEach( titleAndListContent => {
@@ -68,6 +83,7 @@ const handleScroll = () => {
     techBarsAnime();
     projectContentTitleAnime();
     projectCardAnime();
+    headerListAnime();
 }
 
 window.addEventListener('scroll', handleScroll);

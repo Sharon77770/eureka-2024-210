@@ -78,6 +78,16 @@ header nav ul li a:hover {
 .header-content {
     z-index: 2;
     max-width: 700px;
+    translate: t;
+
+    opacity: 0;
+    transform: translateY(150px);
+    transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.header-content.visible {
+    opacity: 1;
+    transform: translateY(0px);
 }
 
 .header-content h1 {
@@ -150,6 +160,16 @@ section ul li {
     transform: translateX(0px);
 }
 
+
+.title-and-list-title1 h2 {
+    font-size: 2.5rem;
+    margin: 0;
+    color: #333;
+    border-left: 5px solid #007bff; /* 강조를 위한 왼쪽 선 */
+    padding-left: 15px;
+}
+
+
 /* 제목 스타일 */
 .title-and-list-title {
     flex: 1; /* 제목 영역 비율 */
@@ -185,6 +205,10 @@ section ul li {
 .title-and-list-content ul li strong {
     color: #333; /* 강조 색상 */
     font-weight: bold;
+}
+
+.title-and-list-content td {
+    padding: 10px;
 }
 
 .cards-title {
@@ -230,7 +254,7 @@ section ul li {
 .card-grid {
     display: flex;
     justify-content: center;
-    gap: 60px;
+    gap: 120px;
     flex-wrap: wrap;
 }
 
