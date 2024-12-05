@@ -454,3 +454,97 @@ footer a {
 footer a:hover {
     color: #218838;
 }
+
+
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    header {
+        height: 70vh;
+        padding: 10px;
+    }
+
+    header nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .header-content h1 {
+        font-size: 2rem;
+    }
+
+    .header-content p {
+        font-size: 0.9rem;
+    }
+
+    .card {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .title-and-list-container {
+        flex-direction: column;
+        gap: 20px;
+        transform: translateY(50px); /* X축 -> Y축 */
+    }
+
+    .title-and-list-container.visible {
+        transform: translateY(0px);
+    }
+
+    .title-and-list-title, .title-and-list-content {
+        width: 100%;
+    }
+
+    .tech-stack-container {
+        flex-direction: column;
+        transform: translateY(50px); /* X축 -> Y축 */
+    }
+
+    .tech-stack-container.visible {
+        transform: translateY(0px);
+    }
+
+    .tech-stack-title, .tech-stack-content {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    header nav ul li a {
+        font-size: 0.9rem;
+    }
+
+    .header-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .header-content p {
+        font-size: 0.8rem;
+    }
+
+    .cta-button {
+        font-size: 1rem;
+        padding: 8px 20px;
+    }
+
+    .card {
+        padding: 10px;
+        transform: translateY(50px); /* X축 -> Y축 */
+    }
+
+    .card.visible {
+        transform: translateY(0px);
+    }
+
+    .tech-item p {
+        font-size: 0.9rem;
+        width: 80px;
+    }
+}
